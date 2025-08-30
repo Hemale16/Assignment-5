@@ -9,28 +9,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
-<body class="bg-[#f5fff6] h-[100vh]">
-    <section class="bg-[#ffffff]">
+<body class="bg-[#f5fff6] h-[120vh]">
+    <section class="bg-[#ffffff] my-2 ml-5">
         <div class="max-h-[300px] flex justify-between items-center">
         <div class="flex">
             <img src="assets/logo.png" class="h-[50px]" alt="">
             <div class="ml-3 font-bold"><h1 class="text-green-900">Emergency <br> Service</h1></div>
         </div>
-        <div class="flex">
+        <div class="flex mr-5 ">
             <div class="flex items-center gap-1 bg-green-50 text-black px-3 py-1 rounded-full shadow-sm">
-    <span class="text-sm font-semibold">0</span>
-    <span class="text-red-500 text-lg"><img src="assets/heart.png" alt="" class="max-h-5"></span>
-  </div>
+            <span class="text-sm font-semibold w-[20px] text-center">0</span>
+            <span class="text-red-500 text-lg"><img src="assets/heart.png" alt="" class="max-h-5"></span>
+            </div>
             <div class="flex items-center gap-1 bg-green-50 text-black px-3 py-1 rounded-full shadow-sm">
-    <span class="text-sm font-semibold">100</span>
-    <span class="text-yellow-500 text-lg"><img src="assets/coin.png" alt="" class="max-h-5"></span>
-  </div>
-            <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded-full font-medium shadow-md transition">2 Copy</button>
+              <span class="text-sm font-semibold">100</span>
+              <span class="text-yellow-500 text-lg"><img src="assets/coin.png" alt="" class="max-h-5"></span>
+            </div>
+            <button id="copyCounter" class="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded-full font-medium shadow-md transition">0 Copy</button>
             </div>
         </div>
     </div>
     </section>
-    <div class="bg-gradient-to-r from-[#014421] via-[#026b35] to-[#014421] py-4">
+
+    <script>
+      let copyCount = 0;
+      
+      function copyNumber(number) {
+        navigator.clipboard.writeText(number).then(()  =>  {
+          copyCount++;
+          document.getElementById("copyCounter").textContent = copyCount + " Copy";
+        }).catch(err => {
+          console.error("Failed to Copy: ", err);
+        });
+      }
+    </script>
+
+
+
+
+    <div class="bg-gradient-to-r from-[#014421] via-[#026b35] to-[#014421] py-5">
     <div class="flex flex-col items-center justify-center text-center">
         <img src="assets/logo-dark.png" alt="" class="w-16 h-16 mb-2" />
         <h1 class="text-white font-bold text-xl mb-2">
@@ -41,85 +58,165 @@
         </p>
     </div>
     </div>
-    <section class="flex justify-around my-20">
-        <div class="border-2 border-red-500 min-h-[200px] grid grid-cols-3 gap-10  ">
-           <div class="p-3 rounded-xl border-2 border-green-500 bg-white">
-            <img src="assets/emergency.png" alt="" class="h-[25px]">
+    <section class="flex justify-around my-10">
+        <div class=" min-h-[200px] grid grid-cols-1 md:grid-cols-3 gap-10  ">
+
+
+
+           <!-- first card -->
+          <div class="p-3 rounded-xl  bg-white shadow-sm">
+             <div class="flex justify-between">
+              <img src="assets/emergency.png" alt="" class="h-[25px]">
+            <i class="fa-regular fa-heart"></i>
+            </div>
             <h1 class="font-bold">National Emergency Number</h1>
-            <p>National Emergency</p>
-            <p class="text-2xl font-bold">999</p>
-            <button class="btn btn-outline"><i class="fa-light fa-copy"></i>Copy</button>
-             <button class="btn btn-success"><i class="fa-solid fa-phone"></i>Call</button>
+            <p class="my-1">National Emergency</p>
+            <p class="text-2xl font-bold ">999</p>
+            <button class="btn btn-xs rounded-full">All</button>
+            <div class="my-5">
+              <button onclick="copyNumber('999')" class="btn btn-outline w-[140px] "><i class="fa-regular fa-copy"></i>Copy</button>
+             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone "></i>Call</button>
+            </div>
            </div> 
-           <div class="border-2 border-green-500 p-3 rounded-xl bg-white">
-            <img src="assets/police.png" alt="" class="h-[25px]">
+
+
+           <!-- card two -->
+           <div class=" p-3 rounded-xl bg-white shadow-sm">
+            <div class="flex justify-between">
+              <img src="assets/police.png" alt="" class="h-[25px]">
+            <i class="fa-regular fa-heart"></i>
+            </div>
             <h1 class="font-bold">Police Helpline Number</h1>
-            <p>National Emergency</p>
+            <p class="my-1">Police</p>
             <p class="text-2xl font-bold">999</p>
-             <button class="btn btn-outline"><i class="fa-solid fa-copy"></i>Copy</button>
-             <button class="btn btn-success"><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="btn btn-xs rounded-full">Police</button>
+             <div class="my-5"><button onclick="copyNumber('999')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
+             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
-           <div class="border-2 border-green-500 p-3 rounded-xl ml-3 bg-white">
-            <img src="assets/fire-service.png" alt="" class="h-[25px]">
+
+
+           <!-- card three -->
+           <div class=" p-3 rounded-xl ml-3 bg-white shadow-sm">
+            <div class="flex justify-between">
+              <img src="assets/fire-service.png" alt="" class="h-[25px]">
+            <i class="fa-regular fa-heart"></i>
+            </div>
             <h1 class="font-bold">Fire Service Number</h1>
-            <p>National Emergency</p>
-            <p class="text-2xl font-bold">999</p>
-            <button class="btn btn-outline"><i class="fa-solid fa-copy"></i>Copy</button>
-             <button class="btn btn-success"><i class="fa-solid fa-phone"></i>Call</button>
+            <p class="my-1">Fire Service</p>
+            <p class="text-2xl font-bold my-2">999</p>
+            <button class="btn btn-xs rounded-full">Fire</button>
+            <div class="my-5"><button onclick="copyNumber('999')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
+             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
-           <div class="border-2 border-green-500 p-3 rounded-xl bg-white">
-            <img src="assets/ambulance.png" alt="" class="h-[25px]">
+
+
+           <!-- card four -->
+           <div class="p-3 rounded-xl bg-white shadow-sm">
+            <div class="flex justify-between">
+              <img src="assets/ambulance.png" alt="" class="h-[25px]">
+            <i class="fa-regular fa-heart"></i>
+            </div>
             <h1 class="font-bold">Ambulance Service</h1>
-            <p>National Emergency</p>
-            <p class="text-2xl font-bold">1994-999999</p>
-            <button class="btn btn-outline"><i class="fa-solid fa-copy"></i>Copy</button>
-             <button class="btn btn-success"><i class="fa-solid fa-phone"></i>Call</button>
+            <p>Ambulance</p>
+            <p class="text-2xl font-bold my-2">1994-999999</p>
+            <button class="btn btn-xs rounded-full">Health</button>
+            <div class="my-5"><button onclick="copyNumber('1994-999999')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
+             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
-           <div class="border-2 border-green-500 p-3 rounded-xl bg-white">
-            <img src="assets/emergency.png" alt="" class="h-[25px]">
+
+
+           <!-- card five -->
+           <div class="p-3 rounded-xl bg-white shadow-sm">
+            <div class="flex justify-between">
+              <img src="assets/emergency.png" alt="" class="h-[25px]">
+            <i class="fa-regular fa-heart"></i>
+            </div>
             <h1 class="font-bold">Women & Child Helpline</h1>
-            <p>National Emergency</p>
-            <p class="text-2xl font-bold">109</p>
-            <button class="btn btn-outline"><i class="fa-solid fa-copy"></i>Copy</button>
-             <button class="btn btn-success"><i class="fa-solid fa-phone"></i>Call</button>
+            <p class="my-1">Women and Child Helpline</p>
+            <p class="text-2xl font-bold ">109</p>
+            <button class="btn btn-xs rounded-full">Help</button>
+            <div class="my-5"><button onclick="copyNumber('109')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
+             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
-           <div class="border-2 border-green-500 p-3 rounded-xl bg-white">
-            <img src="assets/emergency.png" alt="" class="h-[25px]">
+
+
+
+
+
+           <!-- card six -->
+           <div class="p-3 rounded-xl bg-white shadow-sm">
+            <div class="flex justify-between">
+              <img src="assets/emergency.png" alt="" class="h-[25px]">
+            <i class="fa-regular fa-heart"></i>
+            </div>
             <h1 class="font-bold">Anti-Corruption Helpline</h1>
-            <p>National Emergency</p>
-            <p class="text-2xl font-bold">106</p>
-            <button class="btn btn-outline"><i class="fa-solid fa-copy"></i>Copy</button>
-             <button class="btn btn-success"><i class="fa-solid fa-phone"></i>Call</button>
+            <p>Anti-Corruption</p>
+            <p class="text-2xl font-bold my-2">106</p>
+            <button class="btn btn-xs rounded-full">Govt.</button>
+            <div class="my-5">
+              <button onclick="copyNumber('106')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
+             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button>
+            </div>
            </div> 
-           <div class="border-2 border-green-500 p-3 rounded-xl bg-white">
-            <img src="assets/emergency.png" alt="" class="h-[25px]">
+
+
+
+
+           <!-- card seven -->
+           <div class="p-3 rounded-xl bg-white shadow-sm">
+            <div class="flex justify-between">
+              <img src="assets/emergency.png" alt="" class="h-[25px]">
+            <i class="fa-regular fa-heart"></i>
+            </div>
             <h1 class="font-bold">Electricity Helpline</h1>
-            <p>National Emergency</p>
+            <p class="my-1">Electricity Outrage</p>
             <p class="text-2xl font-bold">16216</p>
-            <button class="btn btn-outline"><i class="fa-solid fa-copy"></i>Copy</button>
-             <button class="btn btn-success"><i class="fa-solid fa-phone"></i>Call</button>
+            <button onclick="copyNumber('16216')" class="btn btn-xs rounded-full">Electricity</button>
+            <div class="my-5"><button class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
+             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
-           <div class="border-2 border-green-500 p-3 rounded-xl bg-white">
-            <img src="assets/brac.png" alt="" class="h-[25px]">
+
+
+
+           <!-- card eight -->
+           <div class="p-3 rounded-xl bg-white shadow-sm">
+            <div class="flex justify-between">
+              <img src="assets/brac.png" alt="" class="h-[25px]">
+            <i class="fa-regular fa-heart"></i>
+            </div>
             <h1 class="font-bold">Brac Helpline</h1>
-            <p>National Emergency</p>
+            <p class="my-1">Brac</p>
             <p class="text-2xl font-bold">16445</p>
-            <button class="btn btn-outline"><i class="fa-solid fa-copy"></i>Copy</button>
-             <button class="btn btn-success"><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="btn btn-xs rounded-full">NGO</button>
+            <div class="my-5"><button onclick="copyNumber('16445')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
+             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
-           <div class="border-2 border-green-500 p-3 rounded-xl bg-white">
-            <img src="assets/Bangladesh-Railway.png" alt="" class="h-[25px]">
+
+
+
+
+           <!-- card nine -->
+           <div class="p-3 rounded-xl bg-white shadow-sm">
+            <div class="flex justify-between">
+              <img src="assets/Bangladesh-Railway.png" alt="" class="h-[25px]">
+            <i class="fa-regular fa-heart"></i>
+            </div>
             <h1 class="font-bold">Bangladesh Railway Helpline</h1>
-            <p>National Emergency</p>
+            <p class="my-1">Bangladesh Railway</p>
             <p class="text-2xl font-bold">163</p>
-            <button class="btn btn-outline"><i class="fa-solid fa-copy"></i>Copy</button>
-             <button class="btn btn-success"><i class="fa-solid fa-phone"></i>Call</button>
-           </div> 
+            <button class="btn btn-xs rounded-full">Travel</button>
+            <div class="my-5"><button onclick="copyNumber('163')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
+             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
+           </div>
+
+
+
+           <!-- history -->
            
         </div>
-        <div class="flex around border-2 border-red-500 bg-white w-100 justify-between">
-            <div><p class="font-bold"><span><i class="fa-solid fa-clock"></i></span> Call History</p></div>
-            <div><button class="bg-green-600 hover:bg-green-500 text-white px-4 py-1 rounded-full font-medium">Copy</button></div>
+        <div class="flex flex-col md:flex-row bg-white w-100 justify-between shadow-sm">
+            <div><p class="font-bold ml-5 my-3"><span><i class="fa-regular fa-clock"></i></span> Call History</p></div>
+            <div><button class="bg-green-600 hover:bg-green-500 text-white px-4 py-1 rounded-full font-medium w-[80px] h-[40px] mr-5 my-2">Clear</button></div>
            </div>
     </section>
 </body>
