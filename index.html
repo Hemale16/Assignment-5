@@ -18,7 +18,7 @@
         </div>
         <div class="flex mr-5 ">
             <div class="flex items-center gap-1 bg-green-50 text-black px-3 py-1 rounded-full shadow-sm">
-            <span class="text-sm font-semibold w-[20px] text-center">0</span>
+            <span id="loveCounter" class="text-sm font-semibold w-[20px] text-center">0</span>
             <span class="text-red-500 text-lg"><img src="assets/heart.png" alt="" class="max-h-5"></span>
             </div>
             <div class="flex items-center gap-1 bg-green-50 text-black px-3 py-1 rounded-full shadow-sm">
@@ -41,6 +41,15 @@
         }).catch(err => {
           console.error("Failed to Copy: ", err);
         });
+      }
+    </script>
+
+    <script>
+      let loveCount = 0;
+
+      function addLove() {
+        loveCount++;
+        document.getElementById("loveCounter").textContent = loveCount;
       }
     </script>
 
@@ -67,7 +76,7 @@
           <div class="p-3 rounded-xl  bg-white shadow-sm">
              <div class="flex justify-between">
               <img src="assets/emergency.png" alt="" class="h-[25px]">
-            <i class="fa-regular fa-heart"></i>
+            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">National Emergency Number</h1>
             <p class="my-1">National Emergency</p>
@@ -84,7 +93,7 @@
            <div class=" p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/police.png" alt="" class="h-[25px]">
-            <i class="fa-regular fa-heart"></i>
+            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Police Helpline Number</h1>
             <p class="my-1">Police</p>
@@ -99,7 +108,7 @@
            <div class=" p-3 rounded-xl ml-3 bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/fire-service.png" alt="" class="h-[25px]">
-            <i class="fa-regular fa-heart"></i>
+            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Fire Service Number</h1>
             <p class="my-1">Fire Service</p>
@@ -114,7 +123,7 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/ambulance.png" alt="" class="h-[25px]">
-            <i class="fa-regular fa-heart"></i>
+            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Ambulance Service</h1>
             <p>Ambulance</p>
@@ -129,7 +138,7 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/emergency.png" alt="" class="h-[25px]">
-            <i class="fa-regular fa-heart"></i>
+            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Women & Child Helpline</h1>
             <p class="my-1">Women and Child Helpline</p>
@@ -147,7 +156,7 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/emergency.png" alt="" class="h-[25px]">
-            <i class="fa-regular fa-heart"></i>
+            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Anti-Corruption Helpline</h1>
             <p>Anti-Corruption</p>
@@ -166,7 +175,7 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/emergency.png" alt="" class="h-[25px]">
-            <i class="fa-regular fa-heart"></i>
+            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Electricity Helpline</h1>
             <p class="my-1">Electricity Outrage</p>
@@ -182,7 +191,7 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/brac.png" alt="" class="h-[25px]">
-            <i class="fa-regular fa-heart"></i>
+            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Brac Helpline</h1>
             <p class="my-1">Brac</p>
@@ -199,7 +208,7 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/Bangladesh-Railway.png" alt="" class="h-[25px]">
-            <i class="fa-regular fa-heart"></i>
+            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Bangladesh Railway Helpline</h1>
             <p class="my-1">Bangladesh Railway</p>
