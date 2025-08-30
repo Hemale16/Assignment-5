@@ -54,6 +54,13 @@
     </script>
 
 
+    <script>
+      function callService(ServiceName, number) {
+        alert(`📞Calling "${ServiceName}" service (${number})`);
+      }
+    </script>
+
+
 
 
     <div class="bg-gradient-to-r from-[#014421] via-[#026b35] to-[#014421] py-5">
@@ -76,7 +83,7 @@
           <div class="p-3 rounded-xl  bg-white shadow-sm">
              <div class="flex justify-between">
               <img src="assets/emergency.png" alt="" class="h-[25px]">
-            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
+            <button onclick="addLove()"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">National Emergency Number</h1>
             <p class="my-1">National Emergency</p>
@@ -84,7 +91,7 @@
             <button class="btn btn-xs rounded-full">All</button>
             <div class="my-5">
               <button onclick="copyNumber('999')" class="btn btn-outline w-[140px] "><i class="fa-regular fa-copy"></i>Copy</button>
-             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone "></i>Call</button>
+             <button onclick="callService('National Emergency', '999')" class="btn btn-success w-[140px]"><i class="fa-solid fa-phone "></i>Call</button>
             </div>
            </div> 
 
@@ -93,14 +100,14 @@
            <div class=" p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/police.png" alt="" class="h-[25px]">
-            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
+            <button onclick="addLove()"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Police Helpline Number</h1>
             <p class="my-1">Police</p>
             <p class="text-2xl font-bold">999</p>
             <button class="btn btn-xs rounded-full">Police</button>
              <div class="my-5"><button onclick="copyNumber('999')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
-             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
+             <button onclick="callService('Police', '999')" class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
 
 
@@ -108,14 +115,14 @@
            <div class=" p-3 rounded-xl ml-3 bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/fire-service.png" alt="" class="h-[25px]">
-            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
+            <button onclick="addLove()"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Fire Service Number</h1>
             <p class="my-1">Fire Service</p>
             <p class="text-2xl font-bold my-2">999</p>
             <button class="btn btn-xs rounded-full">Fire</button>
             <div class="my-5"><button onclick="copyNumber('999')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
-             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
+             <button onclick="callService('Fire Service', '999')" class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
 
 
@@ -123,14 +130,14 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/ambulance.png" alt="" class="h-[25px]">
-            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
+            <button onclick="addLove()"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Ambulance Service</h1>
             <p>Ambulance</p>
             <p class="text-2xl font-bold my-2">1994-999999</p>
             <button class="btn btn-xs rounded-full">Health</button>
             <div class="my-5"><button onclick="copyNumber('1994-999999')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
-             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
+             <button onclick="callService('Ambulance', '1994-999999')" class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
 
 
@@ -138,14 +145,14 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/emergency.png" alt="" class="h-[25px]">
-            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
+            <button onclick="addLove()"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Women & Child Helpline</h1>
             <p class="my-1">Women and Child Helpline</p>
             <p class="text-2xl font-bold ">109</p>
             <button class="btn btn-xs rounded-full">Help</button>
             <div class="my-5"><button onclick="copyNumber('109')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
-             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
+             <button onclick="callService('Women and Child Helpline', '109')" class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
 
 
@@ -156,7 +163,7 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/emergency.png" alt="" class="h-[25px]">
-            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
+            <button onclick="addLove()"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Anti-Corruption Helpline</h1>
             <p>Anti-Corruption</p>
@@ -164,7 +171,7 @@
             <button class="btn btn-xs rounded-full">Govt.</button>
             <div class="my-5">
               <button onclick="copyNumber('106')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
-             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button>
+             <button onclick="callService('Anti-Corruption', '106')" class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button>
             </div>
            </div> 
 
@@ -175,14 +182,14 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/emergency.png" alt="" class="h-[25px]">
-            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
+            <button onclick="addLove()"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Electricity Helpline</h1>
             <p class="my-1">Electricity Outrage</p>
             <p class="text-2xl font-bold">16216</p>
             <button onclick="copyNumber('16216')" class="btn btn-xs rounded-full">Electricity</button>
             <div class="my-5"><button class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
-             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
+             <button onclick="callService('Electricity Outrage', '16216')" class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
 
 
@@ -191,14 +198,14 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/brac.png" alt="" class="h-[25px]">
-            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
+            <button onclick="addLove()"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Brac Helpline</h1>
             <p class="my-1">Brac</p>
             <p class="text-2xl font-bold">16445</p>
             <button class="btn btn-xs rounded-full">NGO</button>
             <div class="my-5"><button onclick="copyNumber('16445')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
-             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
+             <button onclick="callService('Brac', '16445')" class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div> 
 
 
@@ -208,14 +215,14 @@
            <div class="p-3 rounded-xl bg-white shadow-sm">
             <div class="flex justify-between">
               <img src="assets/Bangladesh-Railway.png" alt="" class="h-[25px]">
-            <button onclick="addLove()" class="hover:bg-red-100"><i class="fa-regular fa-heart"></i></button>
+            <button onclick="addLove()"><i class="fa-regular fa-heart"></i></button>
             </div>
             <h1 class="font-bold">Bangladesh Railway Helpline</h1>
             <p class="my-1">Bangladesh Railway</p>
             <p class="text-2xl font-bold">163</p>
             <button class="btn btn-xs rounded-full">Travel</button>
             <div class="my-5"><button onclick="copyNumber('163')" class="btn btn-outline w-[140px]"><i class="fa-regular fa-copy"></i>Copy</button>
-             <button class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
+             <button onclick="callService('Bangladesh Railway', '163')" class="btn btn-success w-[140px]"><i class="fa-solid fa-phone"></i>Call</button></div>
            </div>
 
 
