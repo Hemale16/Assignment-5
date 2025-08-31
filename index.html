@@ -22,7 +22,7 @@
             <span class="text-red-500 text-lg"><img src="assets/heart.png" alt="" class="max-h-5"></span>
             </div>
             <div class="flex items-center gap-1 bg-green-50 text-black px-3 py-1 rounded-full shadow-sm">
-              <span class="text-sm font-semibold">100</span>
+              <span id="coinCounter" class="text-sm font-semibold">100</span>
               <span class="text-yellow-500 text-lg"><img src="assets/coin.png" alt="" class="max-h-5"></span>
             </div>
             <button id="copyCounter" class="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded-full font-medium shadow-md transition">0 Copy</button>
@@ -31,6 +31,8 @@
     </div>
     </section>
 
+
+    <!-- copy count -->
     <script>
       let copyCount = 0;
       
@@ -42,20 +44,30 @@
           console.error("Failed to Copy: ", err);
         });
       }
-    </script>
 
-    <script>
+      // love count
+
       let loveCount = 0;
 
       function addLove() {
         loveCount++;
         document.getElementById("loveCounter").textContent = loveCount;
       }
-    </script>
+
+      // call service
 
 
-    <script>
+      let coins = 100;
+      function updateCoins(amount) {
+        coins += amount;
+        document.getElementById("coinCounter").textContent = coins;
+      }
+
+
       function callService(ServiceName, number) {
+        if (coins >= 20) {
+          updateCoins(-20);
+        
         alert(`📞Calling "${ServiceName}" service (${number})`);
 
         const now = new Date();
@@ -65,12 +77,23 @@
 
         const entry = document.createElement("li");
         entry.className = "flex justify-between items-center";
-        entry.innerHTML = `<span class="font-medium">${ServiceName} (${number})</span> <span class="text-gray-500 ml-20 my-4 mr-5">${timeString}</span>`;
+        entry.innerHTML = `
+        <span class="font-medium">${ServiceName} (${number})</span> <span class="text-gray-500 ml-20 my-4 mr-5">${timeString}</span>`;
         historyList.appendChild(entry);
+      } else {
+        alert("❌ You don't have enough coins; at least 20 coins are needed for another call");
       }
-    </script>
+      }
 
-    <script>
+
+
+
+
+
+
+
+      // clear history
+
       function clearHistory() {
         const historyList = document.getElementById("callHistory");
         historyList.innerHTML = "";
